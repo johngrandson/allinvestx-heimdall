@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "onboarding/{id:length(24):regex(^[0-9a-fA-F]+$)}/emails/{emailId:length(24):regex(^[0-9a-fA-F]+$)}/sendVerification",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ],
+  "scriptFile": "../dist/sendConfirmationEmail/index.js"
+}
